@@ -40,5 +40,3 @@ target/
 
 # Branch switching
 generated/
-src/main/resources/
-src/test/
