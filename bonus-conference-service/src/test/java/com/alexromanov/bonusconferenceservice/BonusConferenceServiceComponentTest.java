@@ -25,6 +25,16 @@ public class BonusConferenceServiceComponentTest {
 				.param("userId", "111111")
 				.param("sessionId", "222222"))
 				.andExpect(status().isOk())
-				.andExpect(jsonPath("$.[0].id").isNotEmpty());
+				.andExpect(jsonPath("$.[0].id").value(111111))
+				.andExpect(jsonPath("$.[0].type").value("TICKET"));
+	}
+
+	@Test
+	public void shouldReturnEmptyBonusesIfUserNotFound() throws Exception {
+		mockMvc.perform(get("/userBalance")
+								.param("userId", "222222")
+								.param("sessionId", "111111"))
+			   .andExpect(status().isOk())
+			   .andExpect(jsonPath("$").isEmpty());
 	}
 }
