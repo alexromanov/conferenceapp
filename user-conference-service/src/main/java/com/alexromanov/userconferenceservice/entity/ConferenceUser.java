@@ -2,7 +2,7 @@ package com.alexromanov.userconferenceservice.entity;
 
 import java.util.List;
 
-import com.alexromanov.bonusconferenceservice.entity.Bonus;
+import com.alexromanov.userconferenceservice.model.UserBonus;
 import lombok.Builder;
 import lombok.Data;
 
@@ -12,5 +12,5 @@ public class ConferenceUser {
     private long id;
     private String name;
     private String surname;
-    private List<Bonus> bonuses;
+    private List<UserBonus> bonuses;
 }
